@@ -1,0 +1,136 @@
+= Welcome to AsciiDoc Alive
+:toc: auto
+:icons: font
+
+== Introduction
+This is a *live* AsciiDoc editor. Start typing in the left panel to see the rendered output on the right.
+
+== Features
+* Real-time preview
+* Syntax highlighting with CodeMirror
+* Line numbers
+* Dark theme
+* Export functionality
+* Diagram rendering (PlantUML, Mermaid, GraphViz, and more)
+* Clean interface
+
+[source,javascript]
+----
+console.log('Hello, AsciiDoc!');
+----
+
+== Formatting Examples
+This text is *bold*, this is _italic_, and this is `monospace`.
+
+=== Lists
+. First item
+. Second item
+.. Nested item
+. Third item
+
+[TIP]
+====
+This is a sample tip block.
+====
+
+[NOTE]
+====
+This is a sample note block.
+====
+
+[WARNING]
+====
+This is a sample warning block.
+====
+
+[IMPORTANT]
+====
+This is a sample important block.
+====
+
+== Mathematical Expressions
+You can write mathematical expressions using STEM notation.
+
+=== Inline Math
+The quadratic formula is stem:[x = (-b pm sqrt(b^2-4ac))/(2a)].
+
+Einstein's famous equation: stem:[E = mc^2].
+
+A matrix example: stem:[[[a,b],[c,d]]((n),(k))].
+
+=== Block Math
+[stem]
+++++
+\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+++++
+
+[stem]
+++++
+\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}
+++++
+
+[stem]
+++++
+\begin{bmatrix}
+a & b \\
+c & d
+\end{bmatrix}
+\begin{pmatrix}
+n \\
+k
+\end{pmatrix}
+++++
+
+== Diagrams with Kroki
+Create beautiful diagrams using various diagram types powered by https://kroki.io[Kroki.io].
+
+=== PlantUML Sequence Diagram
+[plantuml]
+----
+@startuml
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: Another authentication Response
+@enduml
+----
+
+=== Mermaid Flowchart
+[mermaid]
+----
+graph TD
+    A[Start] --> B{Is it working?}
+    B -->|Yes| C[Great!]
+    B -->|No| D[Debug]
+    D --> B
+    C --> E[End]
+----
+
+=== GraphViz Directed Graph
+[graphviz]
+----
+digraph G {
+    rankdir=LR;
+    node [shape=box, style=rounded];
+    
+    Frontend -> Backend [label="API Request"];
+    Backend -> Database [label="Query"];
+    Database -> Backend [label="Result"];
+    Backend -> Frontend [label="Response"];
+}
+----
+
+=== Ditaa Diagram
+[ditaa]
+----
++--------+   +-------+    +-------+
+|        | --+ ditaa +--> |       |
+|  Text  |   +-------+    |diagram|
+|Document|   |!magic!|    |       |
+|     {d}|   |       |    |       |
++---+----+   +-------+    +-------+
+    :                         ^
+    |       Lots of work      |
+    +-------------------------+
+----
